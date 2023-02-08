@@ -1,0 +1,122 @@
+documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+Math 218
+\\Project 1A
+\\Jonathan Angeles-Sanchez
+\end{center}
+
+\begin{enumerate}
+\item Let $\vec{u}=\left[\begin{array}{c}
+1\\
+-3\\
+1
+\end{array}\right]$ and $\vec{v}=\left[\begin{array}{c}
+-2\\
+6\\
+-2
+\end{array}\right]$.  Show that $\vec{x}=\left[\begin{array}{c}
+5\\
+7\\
+-5\end{array}\right]$ is not in Span$\{\vec{u},\vec{v}\}$.
+
+We can prove that $\vec{x} \notin \text{Span}{\vec{u},\vec{v}}$ by assuming that it is. In order for $\vec{x}$ to be in the span of $\vec{u}$, $\vec{v}$, it must result as a linear combination of $\vec{u}$ and $\vec{v}$. To show that $\vec{x}$ is a linear combination of $\vec{u}$ and $\vec{v}$, we must create an augmented matrix with column vectors $\vec{u}$, $\vec{v}$, and $\vec{x}$, and then reduce it to its reduced row-echelon form (RREF). If a unique solution for the coefficients of the linear combination exists, then we can conclude that $\vec{x} \in $ Span$\{\vec{u},\vec{v}\}$. However, if no solution or infinitely many solutions exist, we can conclude that $\vec{x} \notin
+$ Span$\{\vec{u},\vec{v}\}$.
+\begin{center}
+$\left[\begin{array}{ccc}
+1 & -2 & 5\\
+-3 & 6 & 7\\
+1 & -2 & -5\\
+\end{array}\right]
+%
+\sim\left[\begin{array}{ccc}
+1 & -2 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0\\
+\end{array}\right]$
+\end{center}
+The RREF augmented matrix has two pivot points, located in the first and second rows. The presence of two pivot points indicates that there are two linearly independent vectors in the matrix, which means that the system of equations has infinitely many solutions. In this case, since the third column is all zeros, the variable corresponding to that column has an arbitrary value, which further confirms that $\vec{x}$ cannot be written as a linear combination of $\vec{u}$ and $\vec{v}$, so $\vec{x} \notin $ Span$\{\vec{u},\vec{v}\}$.
+
+\item Suppose $\{\vec{v_1},\vec{v_2}\}$ is a linearly independent set in $\mathbb{R}^n$.  Show that $\{\vec{v_1},3\vec{v_2}-5\vec{v_1}\}$ is also a linearly independent set.\\\\
+To show that {$\vec{v}_1$, $3\vec{v}_2 - 5\vec{v}_1$} is a linearly independent set in $\mathbb{R}^n$, we will assume that they can be written as a linear combination of the other vectors in the set:
+\begin{center}
+$a_1 \vec{v}_1 + a_2 (3\vec{v}_2 - 5\vec{v}_1) = \vec{0}$
+
+Expanding the second term, we get:
+
+$a_1 \vec{v}_1 + 3a_2 \vec{v}_2 - 5a_2 \vec{v}_1 = \vec{0}$
+
+Rearranging the terms, we get:
+
+$(a_1 - 5a_2) \vec{v}_1 + 3a_2 \vec{v}_2 = \vec{0}$
+\end{center}
+Since $\vec{v}_1$ and $\vec{v}_2$ are linearly independent, this means that neither of them can be expressed as a linear combination of the other. In order for the above equation to be true, the coefficients $(a_1 - 5a_2)$ and $3a_2$ must be equal to zero.
+First, we can consider $3a_2\vec{v}_2 = \vec{0}$. If $\vec{v}_2$ is non-zero, then the only way for this term to be equal to zero is for $a_2 = 0$.
+Next, we can look at $(a_1 - 5a_2)\vec{v}_1 = \vec{0}$. If $\vec{v}_1$ is non-zero, then the only way for this term to be equal to zero is for $a_1 = 5a_2$.
+Lastly, we can consider $(a_1 - 5a_2)\vec{v}_1 = \vec{0}$. If $\vec{v}_1$ is non-zero, then the only way for this term to be equal to zero is for $a_1 = 5a_2$.
+
+Solving for $a_1$ and $a_2$, we find that $a_1 = 5a_2$ and $a_2 = 0$. Since $a_2 = 0$, this means that $\vec{v}_2$ does not contribute to the linear combination. And since $a_1 = 5a_2$, this means that $\vec{v}_1$ does not contribute to the linear combination either. Therefore, the only way for the equation to be true is for both coefficients to be equal to zero, meaning that $\vec{v}_1$ and $3\vec{v}_2 - 5\vec{v}_1$ are linearly independent.
+
+
+\item For what values of $a$ is $\left\{\left[\begin{array}{c}
+1\\
+a
+\end{array}\right],\left[\begin{array}{c}
+a\\
+a+6\end{array}\right]\right\}$ a linearly independent set?
+
+To find the values of $a$ that make the set linearly independent, we can assume that $\left\{\left[\begin{array}{c}
+1\\
+a
+\end{array}\right],\left[\begin{array}{c}
+a\\
+a+6\end{array}\right]\right\}$ is a linearly independent set. Therefore the set can be written in the form of $c_1 \vec{v}_1 + c_2 \vec{v}_2 + ... + c_n \vec{v}_n = \vec{0}$. Or as a linear combination of the other vectors in the set:
+\begin{center}    
+$c_1\left[\begin{array}{c}
+1\\
+a
+\end{array}\right] + c_2\left[\begin{array}{c}
+a\\
+a+6
+\end{array}\right] = \left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+
+where $c_1$ and $c_2$ are scalars, is $c_1 = c_2 = 0$.I 
+\end{center}
+Expanding the equation, we get:
+$\left[\begin{array}{c}
+c_1 + c_2a\\
+c_1a + c_2(a+6)
+\end{array}\right] = \left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$.
+
+This means that $c_1 + c_2a = 0$ and $c_1a + c_2(a+6) = 0$.
+
+Solving for $c_1$ and $c_2$, we have:
+
+$c_1 = -c_2a$ and $c_1a + c_2(a+6) = 0 \implies c_1 = -c_2(a + 6)$
+
+Substituting $c_1 = -c_2a$ into $c_1 = -c_2(a + 6)$, we get:
+
+$-c_2a = -c_2(a + 6) \implies c_2(a - a - 6) = 0$
+
+Since $c_2 \neq 0$ in a linearly independent set, it follows that $a - a - 6 = 0 \implies a = -6$.
+
+Therefore, the set $\left\{\left[\begin{array}{c}
+1\\
+a
+\end{array}\right],\left[\begin{array}{c}
+a\\
+a+6\end{array}\right]\right\}$ is linearly independent if and only if $a = -6$.
+
+\end{enumerate}
+\end{document} 
